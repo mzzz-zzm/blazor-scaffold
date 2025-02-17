@@ -1,0 +1,10 @@
+services:
+  devsvr:
+    container_name: devsvr-blazor
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+    
+    command: sleep infinity
