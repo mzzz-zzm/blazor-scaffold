@@ -1,0 +1,8 @@
+services:
+  web:
+    container_name: web-wasm
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "5001:8080"
