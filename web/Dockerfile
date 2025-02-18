@@ -2,10 +2,10 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS build
 WORKDIR /app
 
 COPY BlazorApp.sln ./
-COPY ./BlazorApp/BlazorApp.csproj ./BlazorApp/
+COPY BlazorApp/BlazorApp.csproj ./BlazorApp/
 
 RUN dotnet restore
-COPY . ./
+COPY . .
 RUN dotnet publish -c Release -o out
 
 FROM nginx:1.27-alpine
