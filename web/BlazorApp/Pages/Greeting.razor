@@ -1,0 +1,28 @@
+@page "/grpc_test"
+@using Google.Protobuf.WellKnownTypes
+@using Grpc.Core
+@using Grpc.Net.Client
+@using Grpc.Net.Client.Web
+
+@using My.Wasm.Page
+
+@inject IHttpClientFactory HttpClientFactory
+@inject BlazorGrpcWebApp.Shared.Greeter.GreeterClient GreeterClient
+
+<PageTitle>Greetings</PageTitle>
+
+<h1>gRPC example</h1>
+
+<p role="status">message from server:@message</p>
+
+
+@code {
+    private string message = "Waiting for response...";
+
+    override protected a Task OnInitializedAsync()
+    {
+        var response = await GreeterClient.GreetAsync(new GreetRequest { Name = "MeBlazor" });
+        message = response.Message;
+    }
+}    
+

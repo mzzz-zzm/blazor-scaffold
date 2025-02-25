@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 option go_package = "github.com/mzzz-zzm/blazor-scaffold/protobuf-gen";
+option csharp_namespace = "BlazorGrpcWebApp.Shared";
 
 package greet;
 

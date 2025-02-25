@@ -17,3 +17,8 @@ pwd
 ctrl-c to stop the docker
 docker-compose down #clean up
 ```
+
+## TODO
+client gRPC is done (razor page); now impl service on server-side
+check udemy as a reference
+
