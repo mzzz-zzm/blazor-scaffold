@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using My.Wasm.Page;
 using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
+using BlazorApp;
 using BlazorGrpcWebApp.Shared;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);

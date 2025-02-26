@@ -3,8 +3,8 @@
 @using Grpc.Core
 @using Grpc.Net.Client
 @using Grpc.Net.Client.Web
-
-@using My.Wasm.Page
+@using BlazorGrpcWebApp.Shared
+@using BlazorApp
 
 @inject IHttpClientFactory HttpClientFactory
 @inject BlazorGrpcWebApp.Shared.Greeter.GreeterClient GreeterClient
@@ -19,7 +19,7 @@
 @code {
     private string message = "Waiting for response...";
 
-    override protected a Task OnInitializedAsync()
+    override protected async Task OnInitializedAsync()
     {
         var response = await GreeterClient.GreetAsync(new GreetRequest { Name = "MeBlazor" });
         message = response.Message;

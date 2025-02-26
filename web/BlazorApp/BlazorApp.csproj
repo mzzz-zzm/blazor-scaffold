@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>My.Wasm.Page</RootNamespace>
+    <RootNamespace>BlazorApp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +17,7 @@
     <PackageReference Include="Grpc.Net.Client.Web" Version="2.67.0" />
     <PackageReference Include="Grpc.Net.ClientFactory" Version="2.67.0" />
 
-    <Protobuf Include="../../protobuf-gen/*.proto" ProtoRoot="../.."/>
+    <Protobuf Include="./proto/*.proto" ProtoRoot="./"/>
   </ItemGroup>
 
 </Project>

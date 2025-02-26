@@ -6,14 +6,25 @@ services:
     volumes:
       - ./protobuf-gen/generated/:/app/generated/
 
-  web:
-    container_name: web-wasm
+  svr:
+    container_name: svr
     build:
-      context: ./web
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./svr/Dockerfile
     depends_on:
       - protobuf-gen
     volumes:
-      - ./protobuf-gen/generated:/app/generated
+      - ./svr/pb:/app/generated
+
+
+  web:
+    container_name: web-wasm
+    build:
+      context: .
+      dockerfile: ./web/Dockerfile
+    depends_on:
+      - protobuf-gen
+    volumes:
+      - ./web/proto:/app/proto
     ports:
       - "5001:8080"
