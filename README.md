@@ -22,3 +22,4 @@ docker-compose down #clean up
 client gRPC is done (razor page); now impl service on server-side
 check udemy as a reference
 
+add .gitignore for set web/BlazorApp/obj/* and protobuf-gen/generated/* to be ignored from commit
