@@ -1,6 +1,15 @@
 # blazor-scaffold
 
 ## how to run the app:
+
+## prerequisites
+#compile protobuffer for server/client
+```sh
+docker-compose build --no-cache protobuf-gen-svr
+docker-compose up protobuf-gen-svr
+```
+
+
 ```sh
 #in development mode
 pwd

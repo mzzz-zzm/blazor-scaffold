@@ -4,7 +4,7 @@ WORKDIR /app
 COPY web/BlazorApp.sln ./
 COPY web/BlazorApp/BlazorApp.csproj ./BlazorApp/
 RUN mkdir -p BlazorApp/proto
-COPY ../../protobuf-gen/*.proto ./BlazorApp/proto/
+COPY ./protobuf-gen/pb/ ./BlazorApp/proto/
 
 RUN dotnet restore
 COPY ./web .

@@ -1,3 +1,2 @@
 #!bin/sh
-
-cp -r /app/artifacts/* /app/generated/
+cp -r /app/compiled/ /app/generated/

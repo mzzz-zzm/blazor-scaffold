@@ -1,10 +1,11 @@
 services:
-  protobuf-gen:
+  protobuf-gen-svr:
     build:
       context: .
       dockerfile: ./protobuf-gen/Dockerfile
     volumes:
-      - ./protobuf-gen/generated/:/app/generated/
+      - ./svr/container/pb:/app/generated/pb
+      - ./web/BlazorApp/proto:/app/pb
 
   svr:
     container_name: svr
@@ -12,9 +13,8 @@ services:
       context: .
       dockerfile: ./svr/Dockerfile
     depends_on:
-      - protobuf-gen
-    volumes:
-      - ./svr/pb:/app/generated
+      - protobuf-gen-svr
+
 
 
   web:
@@ -23,8 +23,8 @@ services:
       context: .
       dockerfile: ./web/Dockerfile
     depends_on:
-      - protobuf-gen
+      - svr
     volumes:
-      - ./web/proto:/app/proto
+      - ./web/BlazorApp/proto:/app/BlazorApp/proto
     ports:
       - "5001:8080"
