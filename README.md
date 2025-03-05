@@ -31,4 +31,5 @@ docker-compose down #clean up
 client gRPC is done (razor page); now impl service on server-side
 check udemy as a reference
 
-add .gitignore for set web/BlazorApp/obj/* and protobuf-gen/generated/* to be ignored from commit
+check the connection b/w client and server
+currently, connection error occurs; check program.cs to access http://svr:50051 for grpc

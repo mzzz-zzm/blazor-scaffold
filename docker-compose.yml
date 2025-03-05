@@ -14,7 +14,8 @@ services:
       dockerfile: ./svr/Dockerfile
     depends_on:
       - protobuf-gen-svr
-
+    ports:
+      - "50051:50051"
 
 
   web:
