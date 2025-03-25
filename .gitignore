@@ -1,2 +1,3 @@
 # Ignore the obj directory in BlazorApp
 web/BlazorApp/obj/
+web/BlazorApp/bin/

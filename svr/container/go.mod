@@ -3,13 +3,17 @@ module github.com/mzzz-zzm/blazor-scaffold/svr
 go 1.24.0
 
 require (
-	google.golang.org/grpc v1.42.0
-	google.golang.org/protobuf v1.25.0
+	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.3
+	github.com/rs/cors v1.11.1
+	google.golang.org/grpc v1.71.0
+	google.golang.org/protobuf v1.36.5
 )
 
 require (
-	github.com/golang/protobuf v1.4.3 // indirect
-	golang.org/x/net v0.0.0-20200822124328-c89045814202 // indirect
-	golang.org/x/sys v0.0.0-20200323222414-85ca7c5b95cd // indirect
-	golang.org/x/text v0.3.0 // indirect
+	golang.org/x/net v0.37.0 // indirect
+	golang.org/x/sys v0.31.0 // indirect
+	golang.org/x/text v0.23.0 // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20250303144028-a0af3efb3deb // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250303144028-a0af3efb3deb // indirect
+
 )

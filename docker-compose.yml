@@ -15,8 +15,13 @@ services:
     depends_on:
       - protobuf-gen-svr
     ports:
-      - "50051:50051"
-
+      - "50051:50051" # for internal grpc test
+      - "8080:8080" # for grpc-web
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://svr:8080/health"]
+      interval: 5s
+      timeout: 2s
+      retries: 3
 
   web:
     container_name: web-wasm
@@ -24,7 +29,8 @@ services:
       context: .
       dockerfile: ./web/Dockerfile
     depends_on:
-      - svr
+      svr:
+        condition: service_healthy
     volumes:
       - ./web/BlazorApp/proto:/app/BlazorApp/proto
     ports:

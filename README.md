@@ -7,6 +7,7 @@
 ```sh
 docker-compose build --no-cache protobuf-gen-svr
 docker-compose up protobuf-gen-svr
+# generated proto code in svr/container/pb
 ```
 
 
@@ -26,10 +27,3 @@ pwd
 ctrl-c to stop the docker
 docker-compose down #clean up
 ```
-
-## TODO
-client gRPC is done (razor page); now impl service on server-side
-check udemy as a reference
-
-check the connection b/w client and server
-currently, connection error occurs; check program.cs to access http://svr:50051 for grpc

@@ -24,7 +24,8 @@ RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 
 # Run protoc against all .proto files in the pb directory and its subdirectories.
-RUN protoc --go_out=./compiled --go_opt=paths=source_relative --go-grpc_out=./compiled --go-grpc_opt=paths=source_relative ./pb/**/*.proto
+RUN protoc --go_out=./compiled --go_opt=paths=source_relative \
+    --go-grpc_out=./compiled --go-grpc_opt=paths=source_relative ./pb/**/*.proto
 
 #TODO:MH test
 # ENTRYPOINT [ "tail", "-f", "/dev/null" ]
